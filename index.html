@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>বায়োডাটা</title>
     <!-- Font Awesome CDN for WhatsApp Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -73,6 +73,7 @@
             margin-top: 30px;
             padding: 15px;
             border-top: 1px solid #8b7d6b;
+            display: block; /* Ensure visibility */
         }
         .whatsapp-contact a {
             color: #25D366;
@@ -88,6 +89,12 @@
         }
         .whatsapp-contact i {
             font-size: 1.5em;
+        }
+        /* Fallback for WhatsApp icon if Font Awesome fails */
+        .whatsapp-contact .fallback-text::before {
+            content: "[WhatsApp] ";
+            color: #25D366;
+            font-weight: bold;
         }
         @media (max-width: 600px) {
             .container {
@@ -244,8 +251,9 @@
 
         <!-- WhatsApp Contact Section -->
         <div class="whatsapp-contact">
-            <a href="https://wa.me/+8801302567194" target="_blank">
-                <i class="fab fa-whatsapp"></i> যোগাযোগ করুন
+            <a href="https://wa.me/+8801302567194" target="_blank" class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i>
+                <span class="fallback-text">যোগাযোগ করুন</span>
             </a>
         </div>
     </div>
